@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    
+    #clock {
+      background: rgb(38, 238, 98);
+      border: 3px solid black;
+      width: 400px;
+      height: 400px;
+      margin: auto;
+      position: relative;
+      border-radius: 50%;
+      top: calc(50vh - 200px);
+    }
+
+    #point {
+      width: 30px;
+      height: 30px;
+      background: white;
+      position: absolute;
+      top: calc(50% - 15px);
+      left: calc(50% - 15px);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    #hour {
+      width: 30%;
+      height: 10px;
+      background: #F7E90C;
+      position: absolute;
+      top: calc(50% - 5px);
+      left: calc(50% - 5px);
+      border-radius: 5px;
+      transform-origin: left center;
+    }
+
+    #minute {
+      width: 40%;
+      height: 10px;
+      background: #EB7301;
+      position: absolute;
+      top: calc(50% - 5px);
+      left: calc(50% - 5px);
+      border-radius: 5px;
+      transform-origin: left center;
+    }
+
+    #second {
+      width: 45%;
+      height: 6px;
+      background: #F5006F;
+      position: absolute;
+      top: calc(50% - 3px);
+      left: calc(50% - 3px);
+      border-radius: 5px;
+      transform-origin: left center;
+    }
+  </style>
+</head>
+<body>
+  <div id="clock">
+    <div id="point"></div>
+    <div id="hour"></div>
+    <div id="minute"></div>
+    <div id="second"></div>
+  </div>
+  <script>
+  const hour = document.getElementById('hour')
+  const minute = document.getElementById('minute')
+  const second = document.getElementById('second')
+
+  setInterval(() => {
+    const date = new Date()
+    hour.style.transform = `rotate(${date.getHours()*30-90}deg)`
+    minute.style.transform = `rotate(${date.getMinutes()*6-90}deg)`
+    second.style.transform = `rotate(${date.getSeconds()*6-90}deg)`
+  }, 1000);
+  </script>
+</body>
+</html>

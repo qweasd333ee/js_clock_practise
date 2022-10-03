@@ -73,6 +73,11 @@
     <div id="minute"></div>
     <div id="second"></div>
   </div>
+  <div id="clock2">
+    <div id="hour2"></div>
+    <div id="minute2"></div>
+    <div id="second2"></div>
+  </div>
   <script>
   const hour = document.getElementById('hour')
   const minute = document.getElementById('minute')
@@ -83,6 +88,13 @@
     hour.style.transform = `rotate(${date.getHours()*30-90}deg)`
     minute.style.transform = `rotate(${date.getMinutes()*6-90}deg)`
     second.style.transform = `rotate(${date.getSeconds()*6-90}deg)`
+  }, 1000);
+
+  setInterval(() => {
+    const date = new Date()
+    hour2.innerText = `${date.getHours()}:`
+    minute2.innerText = `${date.getMinutes()}:`
+    second2.innerText = `${date.getSeconds()}`
   }, 1000);
   </script>
 </body>

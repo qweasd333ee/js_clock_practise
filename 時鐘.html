@@ -8,61 +8,93 @@
   <style>
     body {
       margin: 0;
+      background-image: url("./pic1.jpg");
+
     }
     
     #clock {
-      background: rgb(38, 238, 98);
       border: 3px solid black;
       width: 400px;
       height: 400px;
+      background-color: black;
       margin: auto;
       position: relative;
       border-radius: 50%;
-      top: calc(50vh - 200px);
+      top: calc(50vh - 300px);
     }
 
     #point {
-      width: 30px;
-      height: 30px;
-      background: white;
+      width: 100px;
+      height: 100px;
+      background-image: url("./pic2.png");
+      background-repeat: no-repeat;
       position: absolute;
-      top: calc(50% - 15px);
-      left: calc(50% - 15px);
-      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: 1;
     }
 
     #hour {
-      width: 30%;
-      height: 10px;
-      background: #F7E90C;
+      width: 100px;
+      height: 100px;
+      /* background-image: url("./pic2.png"); */
+      background-repeat: no-repeat;
       position: absolute;
-      top: calc(50% - 5px);
-      left: calc(50% - 5px);
-      border-radius: 5px;
-      transform-origin: left center;
+      top: 50%;
+      left: 50%;
+      margin-left: 50px;
+      transform: translate(-50%, -50%);
+      z-index: 1;
     }
 
     #minute {
-      width: 40%;
-      height: 10px;
-      background: #EB7301;
+      width: 100px;
+      height: 100px;
+      /* background-image: url("./pic4.png"); */
+      background-repeat: no-repeat;
       position: absolute;
-      top: calc(50% - 5px);
-      left: calc(50% - 5px);
-      border-radius: 5px;
-      transform-origin: left center;
+      top: 50%;
+      left: 50%;
+      margin: 50px;
+      transform: translate(-50%, -50%);
+      z-index: 1;
     }
 
     #second {
-      width: 45%;
-      height: 6px;
-      background: #F5006F;
+      width: 100px;
+      height: 100px;
+      background-image: url("./pic2.png");
+      background-repeat: no-repeat;
       position: absolute;
-      top: calc(50% - 3px);
-      left: calc(50% - 3px);
-      border-radius: 5px;
-      transform-origin: left center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-left: 150px;
+      z-index: 1;
+      /* transform-origin: 0 50%; */
+    }
+
+    #clock2 {
+      width: 300px;
+      height: 100px;
+      border: 3px solid black;
+      border-radius: 10px;
+      background: rgb(110, 110, 110);
+      margin: auto;
+      position: relative;
+      top: calc(50vh - 200px);
+      text-align: center;
+      line-height: 100px;
+    }
+
+    #hour2,
+    #minute2,
+    #second2 {
+      display: inline-block;
+      font-size: 50px;
+      font-family: "微軟正黑體";
+      color: white;
     }
   </style>
 </head>
@@ -79,6 +111,7 @@
     <div id="second2"></div>
   </div>
   <script>
+  const point = document.getElementById('point')
   const hour = document.getElementById('hour')
   const minute = document.getElementById('minute')
   const second = document.getElementById('second')
@@ -96,6 +129,8 @@
     minute2.innerText = `${date.getMinutes()}:`
     second2.innerText = `${date.getSeconds()}`
   }, 1000);
+
+
   </script>
 </body>
 </html>

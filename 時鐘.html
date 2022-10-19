@@ -74,7 +74,7 @@
     #clock2 {
       width: 300px;
       height: 100px;
-      border: 3px solid black;
+      border: 3px solid rgb(255, 255, 255);
       border-radius: 10px;
       background: rgb(110, 110, 110);
       margin: auto;
@@ -121,9 +121,13 @@
 
   setInterval(() => {
     const date = new Date()
-    hour2.innerText = `${date.getHours()}:`
-    minute2.innerText = `${date.getMinutes()}:`
-    second2.innerText = `${date.getSeconds()}`
+    const hour = date.getHours()
+    const min = date.getMinutes()
+    const sec = date.getSeconds()
+    
+    hour2.innerText = `${String(hour).padStart(2, 0)}:`
+    minute2.innerText = `${String(min).padStart(2, 0)}:`
+    second2.innerText = `${String(sec).padStart(2, 0)}`
   }, 1000);
 
 
